@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturas Recomendadas — Biblioteca Pública del Maule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #6B3A2A;
+            --color-primary-dark: #4A2518;
+            --color-primary-light: #8B5E4A;
+            --color-accent: #C8956C;
+            --color-accent-light: #E8C9A0;
+            --color-bg: #FDF8F3;
+            --color-bg-alt: #F5EDE4;
+            --color-card: #FFFFFF;
+            --color-text: #2C1810;
+            --color-text-light: #6B5B4F;
+            --color-text-muted: #9E8E80;
+            --color-border: #E0D5C8;
+            --color-star: #D4A017;
+            --color-star-empty: #D0C8BC;
+            --color-success: #5A8F5A;
+            --shadow-sm: 0 1px 3px rgba(44,24,16,0.08);
+            --shadow-md: 0 4px 12px rgba(44,24,16,0.10);
+            --shadow-lg: 0 8px 30px rgba(44,24,16,0.12);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --transition: all 0.25s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-top {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--color-accent);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--color-primary-dark);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3rem;
+            font-weight: 900;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 16px 10px 42px;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            font-size: 0.9rem;
+            backdrop-filter: blur(4px);
+            transition: var(--transition);
+        }
+
+        .search-bar input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            background: rgba(255,255,255,0.25);
+        }
+
+        .search-bar i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link {
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.12);
+            color: white;
+        }
+
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+            padding: 60px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--color-accent-light) 0%, transparent 70%);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.6rem;
+            line-height: 1.2;
+            color: var(--color-primary-dark);
+            margin-bottom: 16px;
+        }
+
+        .hero-content h1 em {
+            color: var(--color-primary);
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: 28px;
+            max-width: 480px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(107,58,42,0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107,58,42,0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-primary);
+            border: 2px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+        }
+
+        .hero-books {
+            display: flex;
+            gap: -20px;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .hero-book {
+            width: 140px;
+            height: 210px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lg);
+            transform: rotateY(-15deg);
+            transition: var(--transition);
+            position: relative;
+            margin-left: -30px;
+            overflow: hidden;
+        }
+
+        .hero-book:first-child {
+            margin-left: 0;
+            transform: rotateY(-15deg) translateZ(20px);
+        }
+
+        .hero-book:nth-child(2) {
+            transform: rotateY(-5deg) translateZ(40px);
+        }
+
+        .hero-book:nth-child(3) {
+            transform: rotateY(5deg) translateZ(20px);
+        }
+
+        .hero-book img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-books:hover .hero-book {
+            transform: rotateY(0deg) translateZ(0);
+            margin-left: 12px;
+        }
+
+        .hero-books:hover .hero-book:first-child {
+            margin-left: 0;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 50px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--color-primary-dark);
+        }
+
+        .section-subtitle {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .see-all {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: var(--transition);
+        }
+
+        .see-all:hover {
+            gap: 8px;
+        }
+
+        /* ===== BOOK CARDS ===== */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 24px;
+        }
+
+        .book-card {
+            background: var(--color-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .book-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            position: relative;
+            overflow: hidden;
+            background: var(--color-bg-alt);
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+        }
+
+        .book-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: var(--color-primary);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .book-want {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            color: var(--color-text-light);
+        }
+
+        .book-want:hover, .book-want.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .book-info {
+            padding: 14px;
+        }
+
+        .book-title {
+            font-family: 'Merriweather', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-text);
+            line-height: 1.3;
+            margin-bottom: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .book-author {
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        .book-rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .stars i {
+            font-size: 0.75rem;
+            color: var(--color-star-empty);
+        }
+
+        .stars i.filled {
+            color: var(--color-star);
+        }
+
+        .stars i.half {
+            background: linear-gradient(90deg, var(--color-star) 50%, var(--color-star-empty) 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .rating-count {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+        }
+
+        /* ===== FEATURED SECTION ===== */
+        .featured-section {
+            background: var(--color-bg-alt);
+            padding: 50px 0;
+        }
+
+        .featured-book {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            background: var(--color-card);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .featured-cover {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .featured-cover img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .featured-details h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: var(--color-primary-dark);
+        }
+
+        .featured-details .author {
+            font-size: 1rem;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .featured-details .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .featured-details .rating-row .stars i {
+            font-size: 1rem;
+        }
+
+        .featured-details .rating-row .score {
+            font-weight: 700;
+            color: var(--color-primary-dark);
+        }
+
+        .featured-details .description {
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .featured-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            background: var(--color-bg-alt);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        .featured-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== REVIEWS ===== */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .review-card {
+            background: var(--color-card);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--color-accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            font-size: 0.85rem;
+        }
+
+        .review-meta {
+            flex: 1;
+        }
+
+        .review-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .review-date {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+        }
+
+        .review-book {
+            font-size: 0.8rem;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ===== LISTS ===== */
+        .lists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .list-card {
+            background: var(--color-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .list-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .list-preview {
+            display: flex;
+            height: 120px;
+            padding: 12px;
+            gap: 4px;
+            background: var(--color-bg-alt);
+        }
+
+        .list-preview img {
+            height: 100%;
+            width: auto;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .list-info {
+            padding: 16px;
+        }
+
+        .list-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--color-primary-dark);
+        }
+
+        .list-meta {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        /* ===== CATEGORIES ===== */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .category-card {
+            background: var(--color-card);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 20px 12px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            border-color: var(--color-primary);
+            background: var(--color-bg-alt);
+            transform: translateY(-3px);
+        }
+
+        .category-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .category-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--color-text);
+        }
+
+        .category-count {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            margin-top: 2px;
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            background: var(--color-primary);
+            color: white;
+            padding: 32px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--color-primary-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 48px 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-brand .logo-title {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--color-accent-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        /* ===== QUOTE OF THE DAY ===== */
+        .quote-section {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .quote-section blockquote {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+        }
+
+        .quote-section cite {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: normal;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin: 0 auto 28px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .featured-book {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-cover {
+                max-width: 200px;
+                margin: 0 auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-wrap: wrap;
+            }
+
+            .search-bar {
+                order: 3;
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--color-primary-dark);
+            color: white;
+            padding: 14px 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            font-size: 0.9rem;
+            font-weight: 500;
+            z-index: 2000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-inner">
+                    <a href="#" class="logo">
+                        <div class="logo-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="logo-text">
+                            <span class="logo-title">Lecturas Recomendadas</span>
+                            <span class="logo-subtitle">Biblioteca Pública del Maule</span>
+                        </div>
+                    </a>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar libros, autores, géneros..." id="searchInput">
+                    </div>
+                    <nav class="header-nav">
+                        <a href="#inicio" class="nav-link active">Inicio</a>
+                        <a href="#biblioteca" class="nav-link">Mi Biblioteca</a>
+                        <a href="#comunidad" class="nav-link">Comunidad</a>
+                        <div class="user-avatar">LR</div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1>Descubre tu próxima <em>gran lectura</em></h1>
+                    <p>Explora miles de títulos, comparte reseñas y conecta con otros lectores de la Región del Maule. Tu próxima historia favorita te espera.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary"><i class="fas fa-compass"></i> Explorar catálogo</button>
+                        <button class="btn btn-secondary"><i class="fas fa-pen"></i> Escribir reseña</button>
+                    </div>
+                </div>
+                <div class="hero-books">
+                    <div class="hero-book">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop" alt="Libro destacado">
+                    </div>
+                    <div class="hero-book">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=450&fit=crop" alt="Libro destacado">
+                    </div>
+                    <div class="hero-book">
+                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=450&fit=crop" alt="Libro destacado">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>12.450</h3>
+                    <p>Libros en catálogo</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3.280</h3>
+                    <p>Lectores activos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8.920</h3>
+                    <p>Reseñas publicadas</p>
+                </div>
+                <div class="stat-item">
+                    <h3>156</h3>
+                    <p>Clubes de lectura</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULAR BOOKS -->
+    <section class="section" id="biblioteca">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Los más leídos esta semana</h2>
+                    <p class="section-subtitle">Los libros que más están gustando en nuestra comunidad</p>
+                </div>
+                <a href="#" class="see-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="books-grid" id="popularBooks"></div>
+        </div>
+    </section>
+
+    <!-- FEATURED BOOK -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Libro del mes</h2>
+                    <p class="section-subtitle">Selección especial del equipo de la Biblioteca Pública del Maule</p>
+                </div>
+            </div>
+            <div class="featured-book">
+                <div class="featured-cover">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop" alt="Libro del mes">
+                </div>
+                <div class="featured-details">
+                    <h2>La casa de los espíritus</h2>
+                    <p class="author">por Isabel Allende</p>
+                    <div class="rating-row">
+                        <div class="stars">
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star half"></i>
+                        </div>
+                        <span class="score">4.5</span>
+                        <span class="rating-count">(2.847 reseñas)</span>
+                    </div>
+                    <p class="description">
+                        Una saga familiar que recorre varias generaciones en un país latinoamericano no identificado, 
+                        mezclando lo real y lo mágico. La historia de los Trueba es un reflejo profundo de la historia 
+                        de Chile, con personajes inolvidables y una prosa deslumbrante que ha conquistado a millones de lectores en todo el mundo.
+                    </p>
+                    <div class="featured-tags">
+                        <span class="tag">Realismo mágico</span>
+                        <span class="tag">Saga familiar</span>
+                        <span class="tag">Literatura chilena</span>
+                        <span class="tag">Premio Nacional</span>
+                    </div>
+                    <div class="featured-actions">
+                        <button class="btn btn-primary" onclick="showToast('¡Libro agregado a tu lista de lectura!')">
+                            <i class="fas fa-plus"></i> Quiero leerlo
+                        </button>
+                        <button class="btn btn-secondary" onclick="showToast('¡Reseña guardada como borrador!')">
+                            <i class="fas fa-pen"></i> Escribir reseña
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Explora por género</h2>
+                    <p class="section-subtitle">Encuentra tu próxima lectura según tus intereses</p>
+                </div>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">📖</div>
+                    <div class="category-name">Ficción</div>
+                    <div class="category-count">3.240 libros</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🔍</div>
+                    <div class="category-name">Misterio</div>
+                    <div class="category-count">1.180 libros</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">❤️</div>
+                    <div class="category-name">Romance</div>
+                    <div class="category-count">2.050 libros</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🚀</div>
+                    <div class="category-name">Ciencia Ficción</div>
+                    <div class="category-count">980 libros</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📜</div>
+                    <div class="category-name">Historia</div>
+                    <div class="category-count">1.560 libros</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🌿</div>
+                    <div class="category-name">Naturaleza</div>
+                    <div class="category-count">720 libros</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎭</div>
+                    <div class="category-name">Poesía</div>
+                    <div class="category-count">890 libros</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">👶</div>
+                    <div class="category-name">Infantil</div>
+                    <div class="category-count">1.340 libros</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW RELEASES -->
+    <section class="section" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Novedades en la biblioteca</h2>
+                    <p class="section-subtitle">Los últimos títulos incorporados a nuestro catálogo</p>
+                </div>
+                <a href="#" class="see-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="books-grid" id="newBooks"></div>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote>
+                "Un libro es un sueño que tienes en tus manos."
+            </blockquote>
+            <cite>— Neil Gaiman</cite>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="comunidad">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Reseñas de la comunidad</h2>
+                    <p class="section-subtitle">Lo que dicen nuestros lectores sobre sus lecturas recientes</p>
+                </div>
+                <a href="#" class="see-all">Ver todas <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="reviews-grid" id="reviewsGrid"></div>
+        </div>
+    </section>
+
+    <!-- READING LISTS -->
+    <section class="section" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Listas de lectura destacadas</h2>
+                    <p class="section-subtitle">Colecciones curadas por nuestros bibliotecarios y lectores</p>
+                </div>
+                <a href="#" class="see-all">Ver todas <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="lists-grid" id="listsGrid"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="margin-bottom: 12px;">
+                        <div class="logo-icon" style="background: var(--color-accent);"><i class="fas fa-book-open"></i></div>
+                        <div class="logo-text">
+                            <span class="logo-title" style="font-size: 1.1rem;">Lecturas Recomendadas</span>
+                            <span class="logo-subtitle">Biblioteca Pública del Maule</span>
+                        </div>
+                    </div>
+                    <p>Conectando lectores de la Región del Maule con historias que transforman. Un espacio para descubrir, compartir y celebrar la literatura en todas sus formas.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Descubrir</h4>
+                    <ul>
+                        <li><a href="#">Novedades</a></li>
+                        <li><a href="#">Más populares</a></li>
+                        <li><a href="#">Recomendaciones</a></li>
+                        <li><a href="#">Autores del Maule</a></li>
+                        <li><a href="#">Premios literarios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Comunidad</h4>
+                    <ul>
+                        <li><a href="#">Clubes de lectura</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="#">Concursos</a></li>
+                        <li><a href="#">Foro de discusión</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Biblioteca</h4>
+                    <ul>
+                        <li><a href="#">Horarios</a></li>
+                        <li><a href="#">Sedes</a></li>
+                        <li><a href="#">Préstamo digital</a></li>
+                        <li><a href="#">Sala de estudio</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Biblioteca Pública del Maule. Todos los derechos reservados.</p>
+                <p>Hecho con <i class="fas fa-heart" style="color: var(--color-accent);"></i> para los lectores del Maule</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ===== DATA =====
+        const popularBooks = [
+            {
+                title: "Cien años de soledad",
+                author: "Gabriel García Márquez",
+                cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop",
+                rating: 4.8,
+                reviews: 4520,
+                badge: "Clásico"
+            },
+            {
+                title: "Pedro Páramo",
+                author: "Juan Rulfo",
+                cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=450&fit=crop",
+                rating: 4.6,
+                reviews: 3210,
+                badge: "Clásico"
+            },
+            {
+                title: "Los detectives salvajes",
+                author: "Roberto Bolaño",
+                cover: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=450&fit=crop",
+                rating: 4.3,
+                reviews: 1890,
+                badge: null
+            },
+            {
+                title: "Ficciones",
+                author: "Jorge Luis Borges",
+                cover: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=450&fit=crop",
+                rating: 4.7,
+                reviews: 2780,
+                badge: "Clásico"
+            },
+            {
+                title: "Rayuela",
+                author: "Julio Cortázar",
+                cover: "https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=300&h=450&fit=crop",
+                rating: 4.4,
+                reviews: 2150,
+                badge: null
+            },
+            {
+                title: "La sombra del viento",
+                author: "Carlos Ruiz Zafón",
+                cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=450&fit=crop",
+                rating: 4.5,
+                reviews: 3420,
+                badge: "Best seller"
+            }
+        ];
+
+        const newBooks = [
+            {
+                title: "El túnel",
+                author: "Ernesto Sabato",
+                cover: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=300&h=450&fit=crop",
+                rating: 4.2,
+                reviews: 890,
+                badge: "Nuevo"
+            },
+            {
+                title: "Papelucho",
+                author: "Marcela Paz",
+                cover: "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=300&h=450&fit=crop",
+                rating: 4.6,
+                reviews: 1560,
+                badge: "Infantil"
+            },
+            {
+                title: "Subterra",
+                author: "Baldomero Lillo",
+                cover: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=300&h=450&fit=crop",
+                rating: 4.1,
+                reviews: 670,
+                badge: "Nuevo"
+            },
+            {
+                title: "La amortajada",
+                author: "María Luisa Bombal",
+                cover: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300&h=450&fit=crop",
+                rating: 4.3,
+                reviews: 920,
+                badge: null
+            },
+            {
+                title: "El obsceno pájaro de la noche",
+                author: "José Donoso",
+                cover: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=300&h=450&fit=crop",
+                rating: 4.0,
+                reviews: 540,
+                badge: null
+            },
+            {
+                title: "Poesía completa",
+                author: "Pablo Neruda",
+                cover: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=300&h=450&fit=crop",
+                rating: 4.9,
+                reviews: 5120,
+                badge: "Clásico"
+            }
+        ];
+
+        const reviews = [
+            {
+                name: "Camila R.",
+                avatar: "CR",
+                book: "La casa de los espíritus",
+                rating: 5,
+                date: "Hace 2 días",
+                text: "Una obra maestra de la literatura latinoamericana. Allende logra crear un universo donde lo mágico y lo cotidiano conviven de manera natural. Los personajes son inolvidables y la prosa es simplemente deslumbrante."
+            },
+            {
+                name: "Diego M.",
+                avatar: "DM",
+                book: "Cien años de soledad",
+                rating: 5,
+                date: "Hace 5 días",
+                text: "Releerlo después de 10 años fue una experiencia completamente nueva. García Márquez es un genio indiscutible. La historia de Macondo es un espejo de nuestra América Latina."
+            },
+            {
+                name: "Valentina S.",
+                avatar: "VS",
+                book: "Los detectives salvajes",
+                rating: 4,
+                date: "Hace 1 semana",
+                text: "Bolaño desafía todas las convenciones narrativas. Es exigente, pero la recompensa es enorme. La parte central del libro es una odisea literaria sin precedentes."
+            },
+            {
+                name: "Joaquín P.",
+                avatar: "JP",
+                book: "Pedro Páramo",
+                rating: 5,
+                date: "Hace 1 semana",
+                text: "Breve pero profundamente impactante. Rulfo crea un pueblo fantasmal que se queda contigo para siempre. La estructura narrativa es innovadora incluso para los estándares actuales."
+            },
+            {
+                name: "Antonia L.",
+                avatar: "AL",
+                book: "Papelucho",
+                rating: 5,
+                date: "Hace 2 semanas",
+                text: "Lo leí con mis hijos y fue mágico. Marcela Paz captura la voz de un niño de una manera que trasciende generaciones. Un tesoro de la literatura infantil chilena."
+            },
+            {
+                name: "Matías H.",
+                avatar: "MH",
+                book: "El túnel",
+                rating: 4,
+                date: "Hace 2 semanas",
+                text: "Una inmersión en la psique humana más oscura. Sabato construye una narrativa tensa y claustrofóbica que no te deja soltar el libro hasta la última página."
+            }
+        ];
+
+        const lists = [
+            {
+                title: "Literatura chilena esencial",
+                books: 24,
+                followers: 342,
+                images: [
+                    "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=80&h=120&fit=crop"
+                ]
+            },
+            {
+                title: "Realismo mágico latinoamericano",
+                books: 18,
+                followers: 518,
+                images: [
+                    "https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=80&h=120&fit=crop"
+                ]
+            },
+            {
+                title: "Poesía para el alma",
+                books: 32,
+                followers: 276,
+                images: [
+                    "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=80&h=120&fit=crop"
+                ]
+            },
+            {
+                title: "Mujeres escritoras latinoamericanas",
+                books: 21,
+                followers: 429,
+                images: [
+                    "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=80&h=120&fit=crop",
+                    "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=80&h=120&fit=crop"
+                ]
+            }
+        ];
+
+        // ===== HELPERS =====
+        function renderStars(rating) {
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= Math.floor(rating)) {
+                    html += '<i class="fas fa-star filled"></i>';
+                } else if (i === Math.ceil(rating) && !Number.isInteger(rating)) {
+                    html += '<i class="fas fa-star half"></i>';
+                } else {
+                    html += '<i class="fas fa-star"></i>';
+                }
+            }
+            return html;
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('es-CL');
+        }
+
+        // ===== RENDER FUNCTIONS =====
+        function renderBooks(books, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = books.map(book => `
+                <div class="book-card" onclick="showToast('Abriendo: ${book.title}')">
+                    <div class="book-cover">
+                        <img src="${book.cover}" alt="${book.title}" loading="lazy">
+                        ${book.badge ? `<span class="book-badge">${book.badge}</span>` : ''}
+                        <button class="book-want" onclick="event.stopPropagation(); toggleWant(this)">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                    <div class="book-info">
+                        <div class="book-title">${book.title}</div>
+                        <div class="book-author">${book.author}</div>
+                        <div class="book-rating">
+                            <div class="stars">${renderStars(book.rating)}</div>
+                            <span class="rating-count">${formatNumber(book.reviews)}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderReviews() {
+            const container = document.getElementById('reviewsGrid');
+            container.innerHTML = reviews.map(review => `
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">${review.avatar}</div>
+                        <div class="review-meta">
+                            <div class="review-name">${review.name}</div>
+                            <div class="review-date">${review.date}</div>
+                        </div>
+                        <div class="stars">${renderStars(review.rating)}</div>
+                    </div>
+                    <div class="review-book">${review.book}</div>
+                    <div class="review-text">${review.text}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderLists() {
+            const container = document.getElementById('listsGrid');
+            container.innerHTML = lists.map(list => `
+                <div class="list-card">
+                    <div class="list-preview">
+                        ${list.images.map(img => `<img src="${img}" alt="" loading="lazy">`).join('')}
+                    </div>
+                    <div class="list-info">
+                        <div class="list-title">${list.title}</div>
+                        <div class="list-meta">${list.books} libros · ${formatNumber(list.followores)} seguidores</div>
+                    </div>
+                </div>
+            `.replace('seguidores', 'seguidores')).join('');
+        }
+
+        // ===== INTERACTIONS =====
+        function toggleWant(btn) {
+            btn.classList.toggle('active');
+            const icon = btn.querySelector('i');
+            if (btn.classList.contains('active')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                showToast('Agregado a tu lista de lectura');
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                showToast('Eliminado de tu lista de lectura');
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== SEARCH =====
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            if (query.length > 0) {
+                const filtered = [...popularBooks, ...newBooks].filter(book => 
+                    book.title.toLowerCase().includes(query) || 
+                    book.author.toLowerCase().includes(query)
+                );
+                if (filtered.length > 0) {
+                    renderBooks(filtered.slice(0, 6), 'popularBooks');
+                }
+            } else {
+                renderBooks(popularBooks, 'popularBooks');
+            }
+        });
+
+        // ===== INIT =====
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBooks(popularBooks, 'popularBooks');
+            renderBooks(newBooks, 'newBooks');
+            renderReviews();
+            renderLists();
+        });
+    </script>
+</body>
+</html>
